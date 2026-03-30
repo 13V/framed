@@ -5,7 +5,7 @@ export default function Footer() {
       style={{ backgroundColor: '#0D0505', borderTop: '1px solid rgba(92,10,20,0.2)' }}
     >
       <div className="flex items-center gap-3">
-        <img src="/framed-logo.jpg" alt="Framed" className="w-7 h-7 object-cover opacity-70" />
+        <img src="/framed-logo-cream.png" alt="Framed" className="w-7 h-7 object-contain opacity-70" />
         <span className="font-display text-cream/40 italic text-sm tracking-widest">Framed</span>
       </div>
 

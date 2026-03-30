@@ -43,9 +43,9 @@ export default function About() {
                 {/* Large cursive f monogram */}
                 <div className="text-center">
                   <img
-                    src="/framed-logo.jpg"
+                    src="/framed-logo-cream.png"
                     alt="Framed monogram"
-                    className="w-40 h-40 object-cover opacity-80 mx-auto"
+                    className="w-40 h-40 object-contain opacity-80 mx-auto"
                   />
                   <div className="rule mt-8 opacity-30" />
                   <p className="font-sans text-sm tracking-widest3 text-cream/20 uppercase mt-6">

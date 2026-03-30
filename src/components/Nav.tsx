@@ -5,8 +5,14 @@ const links = ['Work', 'About', 'Contact']
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { scrollY } = useScroll()
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 200)
+    return () => clearTimeout(t)
+  }, [])
 
   useEffect(() => {
     return scrollY.on('change', v => setScrolled(v > 60))
@@ -29,16 +35,15 @@ export default function Nav() {
       {/* Plain header — no transform/opacity on the outer element so no
           accidental compositing layer that blocks transparency */}
       <header className="fixed top-0 left-0 right-0 z-50">
-        <motion.div
-          className="flex items-center justify-between mx-5 sm:mx-8 md:mx-16 py-4 md:py-5 transition-all duration-500"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        <div
+          className="flex items-center justify-between mx-5 sm:mx-8 md:mx-16 py-4 md:py-5"
           style={{
+            opacity: visible ? 1 : 0,
             borderBottom: scrolled ? '1px solid rgba(92,10,20,0.12)' : '1px solid transparent',
             backdropFilter: scrolled ? 'blur(14px)' : 'none',
             WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
             backgroundColor: scrolled ? 'rgba(245,239,224,0.88)' : 'transparent',
+            transition: 'opacity 0.8s ease, background-color 0.5s ease, border-color 0.5s ease',
           }}
         >
           {/* Logo */}
@@ -48,9 +53,10 @@ export default function Nav() {
             aria-label="Framed home"
           >
             <img
-              src="/framed-logo.jpg"
+              src="/framed-logo-cream.png"
               alt="Framed"
-              className="w-8 h-8 md:w-9 md:h-9 object-cover rounded-sm border border-crimson/20"
+              className="w-8 h-8 md:w-9 md:h-9 object-contain"
+              style={{ filter: scrolled ? 'brightness(0)' : 'none', transition: 'filter 0.5s ease' }}
             />
             <span
               className="font-display text-lg md:text-xl text-crimson uppercase font-light"
@@ -104,7 +110,7 @@ export default function Nav() {
               transition={{ duration: 0.3 }}
             />
           </button>
-        </motion.div>
+        </div>
       </header>
 
       {/* Mobile full-screen menu */}

@@ -9,7 +9,7 @@ const stats = [
 export default function About() {
   const ref = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
-  const inView = useInView(headerRef, { once: true, margin: '-100px' })
+  const inView = useInView(headerRef, { once: true, margin: '-100px' }
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const imgY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%'])
 

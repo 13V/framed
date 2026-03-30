@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-// Static particle data — outside component so it's never re-created
 const PARTICLES = [
   { left: '8%',  size: 1.5, dur: 9,  delay: 0,   opacity: 0.22, drift: 12  },
   { left: '19%', size: 1,   dur: 12, delay: 2.1, opacity: 0.15, drift: -18 },
@@ -54,7 +53,10 @@ function DustParticles() {
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start']
+  })
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '8%'])
 
@@ -65,7 +67,7 @@ export default function Hero() {
       className="relative h-[100svh] overflow-hidden flex flex-col items-center justify-center select-none"
       style={{ backgroundColor: '#0D0505' }}
     >
-      {/* Soft crimson glow behind the mark */}
+      {/* Soft crimson glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 48%, rgba(75,5,7,0.28) 0%, transparent 60%)' }}
@@ -81,7 +83,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.6 }}
       >
-        <span className="font-sans text-sm tracking-widest2 uppercase text-cream/18" style={{ color: 'rgba(245,239,224,0.18)' }}>
+        <span className="font-sans text-sm tracking-widest2 uppercase" style={{ color: 'rgba(245,239,224,0.18)' }}>
           Sydney, AU — 2026
         </span>
       </motion.div>
@@ -91,17 +93,14 @@ export default function Hero() {
         className="flex flex-col items-center gap-6 z-10"
         style={{ opacity, y, willChange: 'opacity, transform' }}
       >
-        <motion.img
+        <img
           src="/framed-logo-cream.png"
           alt="Framed"
           style={{ width: 'clamp(180px, 32vw, 420px)', height: 'auto' }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.645, 0.045, 0.355, 1] }}
         />
       </motion.div>
 
-      {/* Scroll */}
+      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
         initial={{ opacity: 0 }}

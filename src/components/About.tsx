@@ -10,7 +10,10 @@ export default function About() {
   const ref = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
   const inView = useInView(headerRef, { once: true, margin: '-100px' })
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start']
+  })
   const imgY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%'])
 
   return (
@@ -18,9 +21,9 @@ export default function About() {
       ref={ref}
       id="about"
       className="relative py-20 md:py-32 overflow-hidden"
-      style={{ backgroundColor: '#4B0507' }}
+            style={{ backgroundColor: '#5E0809' }}
     >
-      {/* Textured background — subtle crimson noise */}
+      {/* Textured background */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -36,11 +39,14 @@ export default function About() {
             className="relative"
             style={{ y: imgY, willChange: 'transform' }}
           >
-            {/* Decorative frame border */}
             <div className="relative border border-crimson/30 p-1">
-              <div className="border border-crimson/15 p-6 sm:p-8 flex items-center justify-center"
-                   style={{ minHeight: 'clamp(260px, 40vh, 480px)', background: 'linear-gradient(160deg, #5E0809 0%, #4B0507 100%)' }}>
-                {/* Large cursive f monogram */}
+              <div
+                className="border border-crimson/15 p-6 sm:p-8 flex items-center justify-center"
+                style={{
+                  minHeight: 'clamp(260px, 40vh, 480px)',
+                  background: 'linear-gradient(160deg, #4B0507 0%, #4B0507 100%)',
+                }}
+              >
                 <div className="text-center">
                   <img
                     src="/framed-logo-cream.png"
@@ -72,7 +78,6 @@ export default function About() {
           >
             About
           </motion.p>
-
           <motion.h2
             className="font-display font-light text-cream mb-8"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.05 }}
@@ -83,7 +88,6 @@ export default function About() {
             We shoot on<br />
             <span className="italic text-cream/40">location.</span>
           </motion.h2>
-
           <motion.div
             className="space-y-5"
             initial={{ opacity: 0, y: 20 }}
@@ -91,15 +95,10 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.25 }}
           >
             <p className="font-sans text-sm leading-relaxed text-cream/50 font-light">
-              Framed is a small team — two directors, one editor, and whoever the job calls for.
-              We've been shooting in Sydney since 2019, mostly for food, fashion, and property
-              brands, though our best work has come from clients who had a clear brief and got
-              out of the way.
+              Framed is a small team — two directors, one editor, and whoever the job calls for. We've been shooting in Sydney since 2019, mostly for food, fashion, and property brands, though our best work has come from clients who had a clear brief and got out of the way.
             </p>
             <p className="font-sans text-sm leading-relaxed text-cream/50 font-light">
-              We don't do event recap videos or social media packages. If you need something that
-              looks and feels like it was made by people who care what it looks like, we're
-              probably the right fit.
+              We don't do event recap videos or social media packages. If you need something that looks and feels like it was made by people who care what it looks like, we're probably the right fit.
             </p>
           </motion.div>
 

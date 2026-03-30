@@ -31,19 +31,19 @@ export default function Hero() {
   const titleY = useTransform(scrollYProgress, [0, 1], ['0%', '12%'])
 
   return (
-    <section ref={ref} id="hero" className="relative h-[100svh] overflow-hidden bg-ink flex flex-col select-none">
+    <section ref={ref} id="hero" className="relative h-[100svh] overflow-hidden bg-cream flex flex-col select-none">
 
-      {/* Radial crimson atmosphere — GPU-composited, static */}
+      {/* Subtle warm vignette — bottom edge only */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 15% 90%, rgba(92,10,20,0.35) 0%, transparent 55%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 110%, rgba(92,10,20,0.07) 0%, transparent 60%)' }}
       />
 
-      {/* Scan lines */}
+      {/* Grain texture — tuned for light background */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-30"
+        className="absolute inset-0 pointer-events-none opacity-20"
         style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(245,239,224,0.012) 3px, rgba(245,239,224,0.012) 4px)',
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(13,5,5,0.018) 3px, rgba(13,5,5,0.018) 4px)',
         }}
       />
 
@@ -61,15 +61,15 @@ export default function Hero() {
           <div className="flex items-center gap-3">
             <motion.span
               className="inline-block w-1.5 h-1.5 rounded-full bg-crimson"
-              animate={{ opacity: [1, 0.15, 1] }}
+              animate={{ opacity: [1, 0.2, 1] }}
               transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
             />
-            <span className="font-mono text-xs tracking-widest text-cream/25 uppercase">Rec</span>
-            <span className="font-mono text-xs text-cream/15 ml-2">
+            <span className="font-mono text-xs tracking-widest text-ink/35 uppercase">Rec</span>
+            <span className="font-mono text-xs text-ink/20 ml-2">
               <Timecode />
             </span>
           </div>
-          <span className="font-sans text-xs tracking-widest2 uppercase text-cream/20">
+          <span className="font-sans text-xs tracking-widest2 uppercase text-ink/25">
             Sydney, AU — 2026
           </span>
         </motion.div>
@@ -86,12 +86,13 @@ export default function Hero() {
             transition={{ duration: 1.5, delay: 0.15, ease: [0.76, 0, 0.24, 1] }}
           >
             <h1
-              className="font-display text-cream leading-none w-full"
+              className="font-display leading-none w-full"
               style={{
                 fontSize: 'clamp(3.2rem, 19.5vw, 17rem)',
                 fontWeight: 300,
                 letterSpacing: '0.16em',
                 marginTop: '-0.06em',
+                color: '#5C0A14',
               }}
             >
               FRAMED
@@ -106,10 +107,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0, ease: [0.645, 0.045, 0.355, 1] }}
         >
-          <div className="h-px w-full mb-7" style={{ background: 'rgba(245,239,224,0.08)' }} />
+          <div className="h-px w-full mb-7" style={{ background: 'rgba(13,5,5,0.08)' }} />
 
           <div className="flex items-end justify-between gap-4">
-            <p className="font-sans text-xs text-cream/30 leading-loose tracking-wide flex-shrink-0">
+            <p className="font-sans text-xs text-ink/40 leading-loose tracking-wide flex-shrink-0">
               Cinematographers working out of<br className="hidden sm:block" />
               <span className="sm:hidden"> </span>Surry Hills since 2019.
             </p>
@@ -117,21 +118,21 @@ export default function Hero() {
             <div className="hidden lg:flex items-center gap-1 flex-1 justify-center">
               {services.map((s, i) => (
                 <div key={s} className="flex items-center gap-1">
-                  <span className="font-sans text-xs uppercase tracking-widest" style={{ color: 'rgba(245,239,224,0.18)' }}>
+                  <span className="font-sans text-xs uppercase tracking-widest" style={{ color: 'rgba(13,5,5,0.22)' }}>
                     {s}
                   </span>
                   {i < services.length - 1 && (
-                    <span className="mx-1" style={{ color: 'rgba(92,10,20,0.3)', fontSize: '0.5rem' }}>◆</span>
+                    <span className="mx-1" style={{ color: 'rgba(92,10,20,0.25)', fontSize: '0.5rem' }}>◆</span>
                   )}
                 </div>
               ))}
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="font-sans text-xs tracking-widest uppercase text-cream/20">Scroll</span>
+              <span className="font-sans text-xs tracking-widest uppercase text-ink/30">Scroll</span>
               <motion.div
                 className="w-px h-8"
-                style={{ background: 'linear-gradient(to bottom, rgba(245,239,224,0.25), transparent)', transformOrigin: 'top' }}
+                style={{ background: 'linear-gradient(to bottom, rgba(13,5,5,0.25), transparent)', transformOrigin: 'top' }}
                 animate={{ scaleY: [1, 0.25, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               />

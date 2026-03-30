@@ -5,21 +5,21 @@ export default {
     extend: {
       colors: {
         cream: {
-          50:  '#FDFAF4',
-          100: '#F9F3E6',
+          50:  '#F5EFE0',
+          100: '#F5EFE0',
           200: '#F5EFE0',
-          300: '#EDE3CC',
+          300: '#F5EFE0',
           DEFAULT: '#F5EFE0',
         },
         crimson: {
-                    light: '#4B0507',
+          light: '#4B0507',
           DEFAULT: '#4B0507',
-                    dark:  '#4B0507',
+          dark:  '#4B0507',
         },
         ink: {
-          DEFAULT: '#0D0505',
-          muted:   '#2A1515',
-          subtle:  '#4A2525',
+          DEFAULT: '#4B0507',
+          muted:   '#4B0507',
+          subtle:  '#4B0507',
         },
       },
       fontFamily: {

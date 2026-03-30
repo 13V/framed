@@ -76,7 +76,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         {/* Placeholder dark frame — replace src with actual video/image */}
         <div
           className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
-          style={{ background: `linear-gradient(135deg, ${project.color} 0%, #3A0509 100%)` }}
+          style={{ background: `linear-gradient(135deg, ${project.color} 0%, #2D0304 100%)` }}
         />
 
         {/* Project number watermark */}

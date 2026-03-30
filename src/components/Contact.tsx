@@ -84,7 +84,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-10">
               <div
                 className="grid md:grid-cols-2 gap-7 md:gap-10"
-                style={{ backgroundColor: '#3D0A10', padding: 'clamp(1.25rem, 5vw, 3rem)', border: '1px solid rgba(92,10,20,0.15)' }}
+                style={{ backgroundColor: '#4B0507', padding: 'clamp(1.25rem, 5vw, 3rem)', border: '1px solid rgba(75,5,7,0.15)' }}
               >
                 {field('Your Name', 'name', 'text', 'Full name')}
                 {field('Email', 'email', 'email', 'hello@yourbrand.com')}
@@ -103,9 +103,9 @@ export default function Contact() {
                         onClick={() => setForm(f => ({ ...f, budget: b }))}
                         className="font-sans text-sm uppercase tracking-widest px-3 py-2 border transition-colors duration-300"
                         style={{
-                          borderColor: form.budget === b ? '#5C0A14' : 'rgba(245,239,224,0.15)',
+                          borderColor: form.budget === b ? '#4B0507' : 'rgba(245,239,224,0.15)',
                           color: form.budget === b ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
-                          backgroundColor: form.budget === b ? '#5C0A14' : 'transparent',
+                          backgroundColor: form.budget === b ? '#4B0507' : 'transparent',
                         }}
                       >
                         {b}
@@ -127,9 +127,9 @@ export default function Contact() {
                         onClick={() => setForm(f => ({ ...f, service: s }))}
                         className="font-sans text-sm uppercase tracking-widest px-4 py-2.5 border transition-colors duration-300"
                         style={{
-                          borderColor: form.service === s ? '#5C0A14' : 'rgba(245,239,224,0.15)',
+                          borderColor: form.service === s ? '#4B0507' : 'rgba(245,239,224,0.15)',
                           color: form.service === s ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
-                          backgroundColor: form.service === s ? '#5C0A14' : 'transparent',
+                          backgroundColor: form.service === s ? '#4B0507' : 'transparent',
                         }}
                       >
                         {s}

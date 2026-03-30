@@ -12,9 +12,9 @@ export default {
           DEFAULT: '#F5EFE0',
         },
         crimson: {
-          light: '#8B1A2A',
-          DEFAULT: '#5C0A14',
-          dark:  '#3A0509',
+          light: '#7A1215',
+          DEFAULT: '#4B0507',
+          dark:  '#2D0304',
         },
         ink: {
           DEFAULT: '#0D0505',

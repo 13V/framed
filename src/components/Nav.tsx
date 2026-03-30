@@ -45,10 +45,10 @@ export default function Nav() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
               style={{
-                backgroundColor: 'rgba(61,10,16,0.92)',
+                backgroundColor: 'rgba(75,5,7,0.92)',
                 backdropFilter: 'blur(14px)',
                 WebkitBackdropFilter: 'blur(14px)',
-                borderBottom: '1px solid rgba(92,10,20,0.4)',
+                borderBottom: '1px solid rgba(75,5,7,0.4)',
               }}
             />
           )}
@@ -135,7 +135,7 @@ export default function Nav() {
         {menuOpen && (
           <motion.div
             className="fixed inset-0 z-40 flex flex-col justify-between px-6 pb-12 pt-28"
-            style={{ backgroundColor: '#3D0A10' }}
+            style={{ backgroundColor: '#4B0507' }}
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}

@@ -37,7 +37,7 @@ export default function Hero() {
       {/* Soft crimson glow behind the mark */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 48%, rgba(92,10,20,0.28) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 48%, rgba(75,5,7,0.28) 0%, transparent 60%)' }}
       />
 
       {/* HUD — top */}

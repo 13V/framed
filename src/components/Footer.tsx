@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer
       className="py-10 px-5 sm:px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6"
-      style={{ backgroundColor: '#0D0505', borderTop: '1px solid rgba(92,10,20,0.2)' }}
+      style={{ backgroundColor: '#0D0505', borderTop: '1px solid rgba(75,5,7,0.2)' }}
     >
       <div className="flex items-center gap-3">
         <img src="/framed-logo-cream.png" alt="Framed" className="w-7 h-7 object-contain opacity-70" />

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-const budgets = ['Under $5k', '$5k – $15k', '$15k – $30k', '$30k+']
+const budgets = ['Under $5k', '$5k-$10k', '$10k-$15k', '$15k+']
 const services = ['Brand Film', 'Commercial', 'Documentary', 'Social Content', 'Event Coverage']
 
 export default function Contact() {

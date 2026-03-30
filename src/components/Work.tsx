@@ -17,7 +17,7 @@ const projects = [
     category: 'Fashion campaign',
     year: '2025',
     tags: ['Fashion', 'Campaign'],
-    aspect: 'wide',
+    aspect: 'square',
     color: '#2A1010',
   },
   {

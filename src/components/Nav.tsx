@@ -12,7 +12,6 @@ export default function Nav() {
     return scrollY.on('change', v => setScrolled(v > 60))
   }, [scrollY])
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -27,24 +26,25 @@ export default function Nav() {
 
   return (
     <>
-      <motion.header
-        className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 md:px-16"
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.645, 0.045, 0.355, 1], delay: 0.2 }}
-      >
-        <div
-          className="flex items-center justify-between py-4 md:py-5 transition-all duration-500"
+      {/* Plain header — no transform/opacity on the outer element so no
+          accidental compositing layer that blocks transparency */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <motion.div
+          className="flex items-center justify-between mx-5 sm:mx-8 md:mx-16 py-4 md:py-5 transition-all duration-500"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           style={{
-            borderBottom: scrolled ? '1px solid rgba(92, 10, 20, 0.12)' : '1px solid transparent',
-            backdropFilter: scrolled ? 'blur(12px)' : 'none',
-            backgroundColor: scrolled ? 'rgba(245, 239, 224, 0.88)' : 'transparent',
+            borderBottom: scrolled ? '1px solid rgba(92,10,20,0.12)' : '1px solid transparent',
+            backdropFilter: scrolled ? 'blur(14px)' : 'none',
+            WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
+            backgroundColor: scrolled ? 'rgba(245,239,224,0.88)' : 'transparent',
           }}
         >
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2.5 group z-10"
+            className="flex items-center gap-2.5 z-10"
             aria-label="Framed home"
           >
             <img
@@ -54,7 +54,10 @@ export default function Nav() {
             />
             <span
               className="font-display text-lg md:text-xl text-crimson uppercase font-light"
-              style={{ letterSpacing: '0.22em', color: menuOpen ? '#F5EFE0' : undefined }}
+              style={{
+                letterSpacing: '0.22em',
+                color: menuOpen ? '#F5EFE0' : undefined,
+              }}
             >
               Framed
             </span>
@@ -66,7 +69,7 @@ export default function Nav() {
               <button
                 key={link}
                 onClick={() => scrollTo(link)}
-                className="relative font-sans text-xs tracking-widest2 text-ink/60 uppercase hover:text-crimson transition-colors duration-300 group"
+                className="relative font-display text-sm tracking-widest text-ink/60 uppercase hover:text-crimson transition-colors duration-300 group"
               >
                 {link}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-crimson transition-all duration-300 group-hover:w-full" />
@@ -77,7 +80,7 @@ export default function Nav() {
           {/* Desktop CTA */}
           <a
             href="mailto:hello@framed.com.au"
-            className="hidden md:block font-sans text-xs tracking-widest2 uppercase border border-crimson/30 text-crimson px-5 py-2.5 hover:bg-crimson hover:text-cream transition-all duration-300"
+            className="hidden md:block font-display text-sm tracking-widest uppercase border border-crimson/30 text-crimson px-5 py-2.5 hover:bg-crimson hover:text-cream transition-all duration-300"
           >
             Email us
           </a>
@@ -101,8 +104,8 @@ export default function Nav() {
               transition={{ duration: 0.3 }}
             />
           </button>
-        </div>
-      </motion.header>
+        </motion.div>
+      </header>
 
       {/* Mobile full-screen menu */}
       <AnimatePresence>
@@ -115,7 +118,6 @@ export default function Nav() {
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
           >
-            {/* Nav links */}
             <nav className="flex flex-col gap-2 mt-8">
               {links.map((link, i) => (
                 <motion.button
@@ -132,7 +134,6 @@ export default function Nav() {
               ))}
             </nav>
 
-            {/* Bottom bar */}
             <motion.div
               className="flex items-end justify-between"
               initial={{ opacity: 0 }}
@@ -140,17 +141,18 @@ export default function Nav() {
               transition={{ duration: 0.4, delay: 0.45 }}
             >
               <div>
-                <p className="font-sans text-xs text-cream/30 tracking-wider mb-2">Get in touch</p>
+                <p className="font-display text-sm text-cream/30 tracking-wider mb-2">Get in touch</p>
                 <a
                   href="mailto:hello@framed.com.au"
-                  className="font-sans text-sm text-cream/70 hover:text-cream transition-colors"
+                  className="font-display text-base text-cream/70 hover:text-cream transition-colors"
                 >
                   hello@framed.com.au
                 </a>
               </div>
               <div className="flex gap-5">
                 {['IG', 'VM', 'LI'].map(s => (
-                  <a key={s} href="#" className="font-sans text-xs tracking-widest uppercase text-cream/25 hover:text-cream/60 transition-colors">
+                  <a key={s} href="#"
+                    className="font-display text-sm tracking-widest uppercase text-cream/25 hover:text-cream/60 transition-colors">
                     {s}
                   </a>
                 ))}

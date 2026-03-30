@@ -24,7 +24,7 @@ export default {
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        sans:    ['"Cormorant Garamond"', 'Georgia', 'serif'],
         mono:    ['"DM Mono"', 'monospace'],
       },
       fontSize: {

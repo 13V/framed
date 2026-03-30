@@ -24,7 +24,7 @@ export default function Contact() {
     placeholder = ''
   ) => (
     <div className="group">
-      <label className="block font-sans text-xs tracking-widest2 uppercase text-cream/30 mb-2">
+      <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
         {label}
       </label>
       <input
@@ -45,7 +45,7 @@ export default function Contact() {
         {/* Header */}
         <div className="mb-10 md:mb-16">
           <motion.p
-            className="font-sans text-xs tracking-widest3 uppercase text-crimson/60 mb-4"
+            className="font-sans text-sm tracking-widest3 uppercase text-crimson/60 mb-4"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.7 }}
@@ -92,7 +92,7 @@ export default function Contact() {
 
                 {/* Budget selector */}
                 <div>
-                  <label className="block font-sans text-xs tracking-widest2 uppercase text-cream/30 mb-2">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
                     Estimated Budget
                   </label>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -101,7 +101,7 @@ export default function Contact() {
                         key={b}
                         type="button"
                         onClick={() => setForm(f => ({ ...f, budget: b }))}
-                        className="font-sans text-xs uppercase tracking-widest px-3 py-2 border transition-colors duration-300"
+                        className="font-sans text-sm uppercase tracking-widest px-3 py-2 border transition-colors duration-300"
                         style={{
                           borderColor: form.budget === b ? '#5C0A14' : 'rgba(245,239,224,0.15)',
                           color: form.budget === b ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
@@ -116,7 +116,7 @@ export default function Contact() {
 
                 {/* Service selector */}
                 <div className="md:col-span-2">
-                  <label className="block font-sans text-xs tracking-widest2 uppercase text-cream/30 mb-3">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-3">
                     Type of Project
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -125,7 +125,7 @@ export default function Contact() {
                         key={s}
                         type="button"
                         onClick={() => setForm(f => ({ ...f, service: s }))}
-                        className="font-sans text-xs uppercase tracking-widest px-4 py-2.5 border transition-colors duration-300"
+                        className="font-sans text-sm uppercase tracking-widest px-4 py-2.5 border transition-colors duration-300"
                         style={{
                           borderColor: form.service === s ? '#5C0A14' : 'rgba(245,239,224,0.15)',
                           color: form.service === s ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
@@ -140,7 +140,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div className="md:col-span-2">
-                  <label className="block font-sans text-xs tracking-widest2 uppercase text-cream/30 mb-2">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
                     Project brief
                   </label>
                   <textarea
@@ -156,12 +156,12 @@ export default function Contact() {
 
               {/* Submit */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <p className="font-sans text-xs text-ink/30 tracking-wider">
+                <p className="font-sans text-sm text-ink/30 tracking-wider">
                   Usually back within a day.
                 </p>
                 <button
                   type="submit"
-                  className="group flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase
+                  className="group flex items-center gap-3 font-sans text-sm tracking-widest2 uppercase
                              bg-crimson text-cream px-6 py-3 sm:px-8 sm:py-4 hover:bg-crimson-dark transition-colors duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
                   Send Inquiry

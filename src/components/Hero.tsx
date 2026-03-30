@@ -69,7 +69,7 @@ export default function Hero() {
               <Timecode />
             </span>
           </div>
-          <span className="font-sans text-xs tracking-widest2 uppercase text-ink/25">
+          <span className="font-sans text-sm tracking-widest2 uppercase text-ink/25">
             Sydney, AU — 2026
           </span>
         </motion.div>
@@ -110,7 +110,7 @@ export default function Hero() {
           <div className="h-px w-full mb-7" style={{ background: 'rgba(13,5,5,0.08)' }} />
 
           <div className="flex items-end justify-between gap-4">
-            <p className="font-sans text-xs text-ink/40 leading-loose tracking-wide flex-shrink-0">
+            <p className="font-sans text-sm text-ink/40 leading-loose tracking-wide flex-shrink-0">
               Cinematographers working out of<br className="hidden sm:block" />
               <span className="sm:hidden"> </span>Surry Hills since 2019.
             </p>
@@ -118,7 +118,7 @@ export default function Hero() {
             <div className="hidden lg:flex items-center gap-1 flex-1 justify-center">
               {services.map((s, i) => (
                 <div key={s} className="flex items-center gap-1">
-                  <span className="font-sans text-xs uppercase tracking-widest" style={{ color: 'rgba(13,5,5,0.22)' }}>
+                  <span className="font-sans text-sm uppercase tracking-widest" style={{ color: 'rgba(13,5,5,0.22)' }}>
                     {s}
                   </span>
                   {i < services.length - 1 && (
@@ -129,7 +129,7 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="font-sans text-xs tracking-widest uppercase text-ink/30">Scroll</span>
+              <span className="font-sans text-sm tracking-widest uppercase text-ink/30">Scroll</span>
               <motion.div
                 className="w-px h-8"
                 style={{ background: 'linear-gradient(to bottom, rgba(13,5,5,0.25), transparent)', transformOrigin: 'top' }}

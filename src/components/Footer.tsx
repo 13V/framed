@@ -9,7 +9,7 @@ export default function Footer() {
         <span className="font-display text-cream/40 italic text-sm tracking-widest">Framed</span>
       </div>
 
-      <p className="font-sans text-xs text-cream/20 tracking-wider text-center">
+      <p className="font-sans text-sm text-cream/20 tracking-wider text-center">
         © 2026 Framed. Surry Hills, Sydney.
       </p>
 
@@ -18,7 +18,7 @@ export default function Footer() {
           <a
             key={link}
             href="#"
-            className="font-sans text-xs tracking-widest uppercase text-cream/20 hover:text-cream/60 transition-colors duration-300"
+            className="font-sans text-sm tracking-widest uppercase text-cream/20 hover:text-cream/60 transition-colors duration-300"
           >
             {link}
           </a>

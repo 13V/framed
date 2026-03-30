@@ -92,7 +92,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           {project.tags.map((tag, i) => (
             <span
               key={tag}
-              className={`font-sans text-xs tracking-widest text-cream/40 uppercase bg-ink/40 px-2 py-0.5 backdrop-blur-sm ${i > 0 ? 'hidden sm:inline' : ''}`}
+              className={`font-sans text-sm tracking-widest text-cream/40 uppercase bg-ink/40 px-2 py-0.5 backdrop-blur-sm ${i > 0 ? 'hidden sm:inline' : ''}`}
             >
               {tag}
             </span>
@@ -108,7 +108,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           style={{ background: 'linear-gradient(to top, rgba(13,5,5,0.9) 0%, transparent 60%)' }}
         >
           <div>
-            <p className="font-sans text-xs tracking-widest2 uppercase text-cream/50 mb-1">{project.category}</p>
+            <p className="font-sans text-sm tracking-widest2 uppercase text-cream/50 mb-1">{project.category}</p>
             <h3 className="font-display text-cream text-xl sm:text-2xl font-light italic">{project.title}</h3>
           </div>
         </motion.div>
@@ -130,7 +130,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       <div className="mt-4 flex items-start justify-between">
         <div>
           <h3 className="font-display text-lg font-light text-ink italic">{project.title}</h3>
-          <p className="font-sans text-xs text-ink/40 tracking-wider uppercase mt-0.5">{project.category}</p>
+          <p className="font-sans text-sm text-ink/40 tracking-wider uppercase mt-0.5">{project.category}</p>
         </div>
         <span className="font-mono text-xs text-ink/30 mt-1">{project.year}</span>
       </div>
@@ -147,7 +147,7 @@ export default function Work() {
       {/* Section header */}
       <div ref={headerRef} className="mb-12 md:mb-20">
         <motion.p
-          className="font-sans text-xs tracking-widest3 uppercase text-crimson/60 mb-4"
+          className="font-sans text-sm tracking-widest3 uppercase text-crimson/60 mb-4"
           initial={{ opacity: 0, x: -20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7 }}
@@ -166,7 +166,7 @@ export default function Work() {
           </motion.h2>
           <motion.a
             href="#contact"
-            className="hidden md:flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-crimson/60 hover:text-crimson transition-colors pb-2"
+            className="hidden md:flex items-center gap-3 font-sans text-sm tracking-widest2 uppercase text-crimson/60 hover:text-crimson transition-colors pb-2"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}

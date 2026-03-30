@@ -48,7 +48,7 @@ export default function About() {
                     className="w-40 h-40 object-cover opacity-80 mx-auto"
                   />
                   <div className="rule mt-8 opacity-30" />
-                  <p className="font-sans text-xs tracking-widest3 text-cream/20 uppercase mt-6">
+                  <p className="font-sans text-sm tracking-widest3 text-cream/20 uppercase mt-6">
                     Est. 2019
                   </p>
                 </div>
@@ -65,7 +65,7 @@ export default function About() {
         {/* Right — copy */}
         <div ref={headerRef} className="md:col-span-7 md:pl-8">
           <motion.p
-            className="font-sans text-xs tracking-widest3 uppercase text-crimson/50 mb-6"
+            className="font-sans text-sm tracking-widest3 uppercase text-crimson/50 mb-6"
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
@@ -115,7 +115,7 @@ export default function About() {
                 <p className="font-display text-cream font-light" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.8rem)' }}>
                   {s.value}
                 </p>
-                <p className="font-sans text-xs text-cream/30 uppercase tracking-widest mt-1">{s.label}</p>
+                <p className="font-sans text-sm text-cream/30 uppercase tracking-widest mt-1">{s.label}</p>
               </div>
             ))}
           </motion.div>

@@ -24,7 +24,7 @@ export default function Contact() {
     placeholder = ''
   ) => (
     <div className="group">
-      <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
+      <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/60 mb-2">
         {label}
       </label>
       <input
@@ -32,8 +32,8 @@ export default function Contact() {
         placeholder={placeholder}
         value={form[key]}
         onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
-        className="w-full bg-transparent border-b border-cream/15 pb-3 font-sans text-sm text-cream placeholder:text-cream/20
-                   focus:outline-none focus:border-crimson/60 transition-colors duration-300"
+        className="w-full bg-transparent border-b border-cream/30 pb-3 font-sans text-sm text-cream placeholder:text-cream/40
+                   focus:outline-none focus:border-cream/60 transition-colors duration-300"
         required
       />
     </div>
@@ -92,7 +92,7 @@ export default function Contact() {
 
                 {/* Budget selector */}
                 <div>
-                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/60 mb-2">
                     Estimated Budget
                   </label>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -103,9 +103,9 @@ export default function Contact() {
                         onClick={() => setForm(f => ({ ...f, budget: b }))}
                         className="font-sans text-sm uppercase tracking-widest px-3 py-2 border transition-colors duration-300"
                         style={{
-                          borderColor: form.budget === b ? '#4B0507' : 'rgba(245,239,224,0.15)',
-                          color: form.budget === b ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
-                          backgroundColor: form.budget === b ? '#4B0507' : 'transparent',
+                          borderColor: form.budget === b ? '#F5EFE0' : 'rgba(245,239,224,0.25)',
+                          color: form.budget === b ? '#4B0507' : 'rgba(245,239,224,0.65)',
+                          backgroundColor: form.budget === b ? '#F5EFE0' : 'transparent',
                         }}
                       >
                         {b}
@@ -116,7 +116,7 @@ export default function Contact() {
 
                 {/* Service selector */}
                 <div className="md:col-span-2">
-                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-3">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/60 mb-3">
                     Type of Project
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -127,9 +127,9 @@ export default function Contact() {
                         onClick={() => setForm(f => ({ ...f, service: s }))}
                         className="font-sans text-sm uppercase tracking-widest px-4 py-2.5 border transition-colors duration-300"
                         style={{
-                          borderColor: form.service === s ? '#4B0507' : 'rgba(245,239,224,0.15)',
-                          color: form.service === s ? '#F5EFE0' : 'rgba(245,239,224,0.35)',
-                          backgroundColor: form.service === s ? '#4B0507' : 'transparent',
+                          borderColor: form.service === s ? '#F5EFE0' : 'rgba(245,239,224,0.25)',
+                          color: form.service === s ? '#4B0507' : 'rgba(245,239,224,0.65)',
+                          backgroundColor: form.service === s ? '#F5EFE0' : 'transparent',
                         }}
                       >
                         {s}
@@ -140,7 +140,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div className="md:col-span-2">
-                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/30 mb-2">
+                  <label className="block font-sans text-sm tracking-widest2 uppercase text-cream/60 mb-2">
                     Project brief
                   </label>
                   <textarea
@@ -148,8 +148,8 @@ export default function Contact() {
                     placeholder="Give us a rough idea of what you're after."
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                    className="w-full bg-transparent border-b border-cream/15 pb-3 font-sans text-sm text-cream
-                               placeholder:text-cream/20 focus:outline-none focus:border-crimson/60 transition-colors duration-300 resize-none"
+                    className="w-full bg-transparent border-b border-cream/30 pb-3 font-sans text-sm text-cream
+                               placeholder:text-cream/40 focus:outline-none focus:border-cream/60 transition-colors duration-300 resize-none"
                   />
                 </div>
               </div>
